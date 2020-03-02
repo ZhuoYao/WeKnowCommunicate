@@ -1,0 +1,15 @@
+/* pages/usercenter/usercenter.wxss */
+.card {
+  border: 2px solid #4fc0c0;
+  border-radius: 5px;
+  background-color: #00ffff;
+  box-shadow: 4px 1px 1px #cccccc;
+  margin: 8px;
+  position: relative;
+}
+
+.sender-nickname {
+  color: rgb(83, 112, 136);
+  font-size: 30rpx;
+  margin: 15rpx;
+}

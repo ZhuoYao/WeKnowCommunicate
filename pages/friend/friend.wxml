@@ -1,0 +1,12 @@
+<!--pages/friend/friend.wxml-->
+<view><text>为您新匹配到6名好友，共754名</text>
+<view class="card">
+  <view class="sender-nickname">
+    <text>搜索</text>
+  </view>
+</view></view>
+<view class="card" wx:for="{{nums}}" wx:key="unique">
+  <view class="sender-nickname">
+    <text>{{index}}下标的元素是{{item}}</text>
+  </view>
+</view>

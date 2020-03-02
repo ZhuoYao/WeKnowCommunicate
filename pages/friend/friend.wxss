@@ -1,0 +1,14 @@
+/* pages/friend/friend.wxss */
+.card {
+  border: 2px solid #4fc0c0;
+  border-radius: 5px;
+  background-color: #edfcfc;
+  margin: 8px;
+  position: relative;
+}
+
+.sender-nickname {
+  color: rgb(83, 112, 136);
+  font-size: 30rpx;
+  margin: 15rpx;
+}
