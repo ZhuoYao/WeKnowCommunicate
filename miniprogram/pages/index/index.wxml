@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <text class="userinfo-nickname" bindtap="bindViewTap">{{userInfo.nickName}},有754名好友连接到您的飞鸽。</text>
+    </view>
+  </view>
+
+  
+
+  <view class="uploader">
+    <view class="uploader-text" wx:if="{{!FirstTest}}" bindtap="doUpload">
+      <text>上传应用列表截图，开启使用相知的第一步</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="card" wx:for="{{nums}}" wx:key="unique">
+    <view class="sender-nickname">
+      <text>{{index}}下标的元素是{{item}}\n换个行</text>
+    </view>
+  </view>
+  <!-- 操作数据库 -->
+  <view class="uploader">
+    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
+      <text>前端操作数据库</text>
+    </navigator>
+  </view>
+
+  <!-- 即时通信 -->
+  <view class="uploader">
+    <navigator url="../im/im" open-type="navigate" class="uploader-text">
+      <text>即时通信 Demo</text>
+    </navigator>
+  </view>
+
+  <!-- 新建云函数 -->
+  <view class="uploader">
+    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
+      <text>快速新建云函数</text>
+    </navigator>
+  </view>
+
+  <!-- 云调用 -->
+  <view class="uploader">
+    <navigator url="../openapi/openapi" open-type="navigate" class="uploader-text">
+      <text>云调用</text>
+    </navigator>
+  </view>
+</view>

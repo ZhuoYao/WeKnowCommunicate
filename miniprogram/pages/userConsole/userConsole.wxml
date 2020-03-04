@@ -1,0 +1,24 @@
+<!--pages/userConsole/userConsole.wxml-->
+<view class="container">
+
+  <view class="list">
+    <div class="list-item">
+      <text class="request-text">用户 openid 获取成功</text>
+    </div>
+    <div class="list-item" bindtap="testCgi">
+      <text class="request-text">{{openid}}</text>
+    </div>
+    <div class="list-item">
+      <div class="sender-nickname">
+        <text>搜索</text>
+      </div>
+    </div>
+<view class="list-item" wx:for="{{nums}}" wx:key="unique">
+  <view class="sender-nickname">
+    <text>{{index}}下标的元素是{{item}}</text>
+  </view>
+</view>
+  </view>
+
+
+</view>
