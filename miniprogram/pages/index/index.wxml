@@ -2,7 +2,20 @@
 <view class="container">
 
   <!-- 用户 openid -->
-  <view class="userinfo">
+  <view class="newuserinfo" wx:if="{{!FirstTest}}">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <text class="userinfo-nickname" bindtap="doUpload">{{userInfo.nickName}},请上传应用列表截图\n开启使用相知的第一步</text>
+    </view>
+  </view>
+
+  <view class="userinfo" wx:if="{{FirstTest}}">
     <button 
       open-type="getUserInfo" 
       bindgetuserinfo="onGetUserInfo"
@@ -17,22 +30,18 @@
 
   
 
-  <view class="uploader">
-    <view class="uploader-text" wx:if="{{!FirstTest}}" bindtap="doUpload">
+  <!-- <view class="upcard" wx:if="{{!FirstTest}}" bindtap="doUpload">
       <text>上传应用列表截图，开启使用相知的第一步</text>
-    </view>
     <view class="uploader-container" wx:if="{{imgUrl}}">
       <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
     </view>
-  </view>
+  </view> -->
 
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="userinfo-nickname">
+    <text>—— 新收到的飞鸽 ——</text>
   </view>
   <view class="card" wx:for="{{nums}}" wx:key="unique">
-    <view class="sender-nickname">
-      <text>{{index}}下标的元素是{{item}}\n换个行</text>
-    </view>
+      <text>{{index}}下标的元素是{{item}}\n换个行\n母猪分娩时，生殖器官发生了急剧的变化，机体的抵抗力明显下降。因此，母猪产后要进行妥善的护理，让其尽早恢复健康，投入正常的生产。 1、饲养方面 分娩时体力消耗很大，体液损失多，母猪表现出疲劳和口渴，因此，要准备足够的、温热的1%盐水，供母猪饮用。</text>
   </view>
   <!-- 操作数据库 -->
   <view class="uploader">

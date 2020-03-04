@@ -26,7 +26,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.8.1",
 	"appid": "wxb85d5f50556e9dff",
-	"projectname": "%E7%9B%B8%E7%9F%A5%E9%A3%9E%E9%B8%BD",
+	"projectname": "WeKnowCommunicate",
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"cloudfunctionTemplateRoot": "",

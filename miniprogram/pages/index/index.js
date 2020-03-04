@@ -2,6 +2,7 @@
 const app = getApp()
 const db = wx.cloud.database()
 const user = db.collection('user')
+var userid = ''
 Page({
   //页面数据
   data: {
@@ -10,9 +11,7 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    motto: '最新收到的飞鸽',
     nums: [],
-    userid:'',
     FirstTest:'',
   },
   //页面加载
@@ -47,26 +46,33 @@ Page({
     this.onGetOpenid()
     var that=this
     user.where({
-      _openid:"ouRE75OX_vVTDfrCDfTq559yBED8"
+      _openid: userid
     }).count().then(res => {
-      console.log('这个用户有',res.total,'条上传记录')
       if(res.total!=0){
-        app.globalData.firstTest=true
-        that.setData({
-          FirstTest:app.globalData.firstTest
-        })
+        app.globalData.firstTest=true  
       }else{
         app.globalData.firstTest = false
-        that.setData({
-          FirstTest: app.globalData.firstTest
-        })
       }
-      console.log(app.globalData.firstTest)
+      that.setData({
+        FirstTest: app.globalData.firstTest
+      })
     })
   },
   onShow: function(){
-    this.setData({
-      FirstTest: app.globalData.firstTest
+    user.where({
+      _openid: userid
+    }).count().then(res => {
+      console.log('这个用户有', res.total, '条上传记录')
+      if (res.total != 0) {
+        app.globalData.firstTest = true
+        
+      } else {
+        app.globalData.firstTest = false
+      }
+      console.log(app.globalData.firstTest)
+      this.setData({
+        FirstTest: app.globalData.firstTest
+      })
     })
   },
   //获取用户信息
@@ -88,10 +94,7 @@ Page({
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
-        this.setData({
-        userid:app.globalData.openid
-        })
-        
+        this.userid=app.globalData.openid
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
@@ -129,7 +132,6 @@ Page({
           filePath,
           success: res => {
             console.log('[上传文件] 成功：', res)
-
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
@@ -143,6 +145,7 @@ Page({
                   counterId: res._id,
                   count: 1
                 })
+                app.globalData.firstTest = true
                 wx.showToast({
                   title: '新增记录成功',
                 })
@@ -177,76 +180,5 @@ Page({
         console.error(e)
       }
     })
-  },
-  // doUpload: function () {
-  //   // 选择图片
-  //   wx.chooseImage({
-  //     sizeType: ['compressed'],
-  //     sourceType: ['album', 'camera'],
-  //     success: function (res) {
-
-  //       wx.showLoading({
-  //         title: '上传中',
-  //       })
-
-  //       const filePath = res.tempFilePaths[0]
-
-  //       // 上传图片
-  //       const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
-        
-        
-  //       wx.cloud.uploadFile({
-  //         cloudPath,
-  //         filePath,
-  //         success: res => {
-  //           console.log('[上传文件] 成功：', res)
-  //           app.globalData.fileID = res.fileID
-  //           app.globalData.cloudPath = cloudPath
-  //           app.globalData.imagePath = filePath
-  //           db.collection('user').set({
-  //             data: {
-  //               count: 1
-  //             },
-  //             success: res => {
-  //               // 在返回结果中会包含新创建的记录的 _id
-  //               this.setData({
-  //                 counterId: res._id,
-  //                 count: 1
-  //               })
-  //               wx.showToast({
-  //                 title: '新增记录成功',
-  //               })
-  //               console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-  //             },
-  //             fail: err => {
-  //               wx.showToast({
-  //                 icon: 'none',
-  //                 title: '新增记录失败'
-  //               })
-  //               console.error('[数据库] [新增记录] 失败：', err)
-  //             }
-  //           })
-
-  //           wx.navigateTo({
-  //             url: '../storageConsole/storageConsole'
-  //           })
-  //         },
-  //         fail: e => {
-  //           console.error('[上传文件] 失败：', e)
-  //           wx.showToast({
-  //             icon: 'none',
-  //             title: '上传失败',
-  //           })
-  //         },
-  //         complete: () => {
-  //           wx.hideLoading()
-  //         }
-  //       })
-
-  //     },
-  //     fail: e => {
-  //       console.error(e)
-  //     }
-  //   })
-  // },
+  }
 })

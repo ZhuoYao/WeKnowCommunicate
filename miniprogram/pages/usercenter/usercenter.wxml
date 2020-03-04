@@ -1,6 +1,6 @@
 <!--pages/usercenter/usercenter.wxml-->
 <view class="container">
-  <div bindtap="bindViewTap" class="userinfo">
+  <div class="userinfo">
     <div>
       <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
     </div>
@@ -13,7 +13,7 @@
     </div>
     <text class="userinfo-percent">相知密码：ENTJ4C93DAB</text>
     <!-- 上传图片 -->
-  <view class="uploader">
+  <view class="card">
     <view class="uploader-text" wx:if="true" bindtap="doUpload">
       <text>您有新的可补充资料：应用列表</text>
     </view>
@@ -21,7 +21,7 @@
       <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
     </view>
   </view>
-  <view class="uploader">
+  <view class="card">
     <view class="uploader-text" wx:if="true" bindtap="doUpload">
       <text>您有新的可补充资料：音乐曲库</text>
     </view>
@@ -30,5 +30,4 @@
     </view>
   </view>
   </div>
-  
 </view>
