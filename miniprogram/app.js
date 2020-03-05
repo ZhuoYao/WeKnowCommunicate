@@ -17,7 +17,7 @@ App({
     }
 
     this.globalData = {
-      firstTest:true
+      firstTest:false
     }
   }
 })

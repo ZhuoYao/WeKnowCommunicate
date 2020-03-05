@@ -1,16 +1,5 @@
 /* pages/usercenter/usercenter.wxss */
-.card {
-  border-radius: 24rpx;
-  margin: 16rpx;
-  padding: 24rpx;
-  font-size: 36rpx;
-  padding-left: 36rpx;
-  border: 2rpx solid #dfe7e7;
-  background-color: #ffffff;
-  box-shadow: 0rpx 2rpx 0rpx 0rpx #cccccc;
-  position: relative;
-  width: 90%;
-}
+
 
 .userinfo {
   display: flex;

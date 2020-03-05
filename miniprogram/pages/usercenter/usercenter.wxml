@@ -1,27 +1,35 @@
 <!--pages/usercenter/usercenter.wxml-->
 <view class="container">
-  <div class="userinfo">
-    <div>
+  <div class="card">
+    <van-row>
       <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
-    </div>
+    </van-row>
+    <van-row>
     <div class="userinfo-nickname">
       <text>外向E 本质N 理性T 计划J</text>
     </div>
+    </van-row>
+    <van-row>
     <text class="userinfo-percent">有10%的相知用户与{{userInfo.nickName}}属于同一种性格类型</text>
-     <div>
+    </van-row>
+    <van-row>
       <image class="userinfo-vector" src="{{uservector}}" background-size="cover"></image>
-    </div>
+    </van-row>
+    <van-row>
     <text class="userinfo-percent">相知密码：ENTJ4C93DAB</text>
+    </van-row>
     <!-- 上传图片 -->
-  <view class="card">
-    <view class="uploader-text" wx:if="true" bindtap="doUpload">
+  
+  </div>
+  <view class="card" style="border: 3rpx solid #51da51;color:#41ca41;font-size:30rpx;font-weight:bold">
+    <view class="uploader-text" wx:if="true" bindtap="doUpload" >
       <text>您有新的可补充资料：应用列表</text>
     </view>
     <view class="uploader-container" wx:if="{{imgUrl}}">
       <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
     </view>
   </view>
-  <view class="card">
+  <view class="card" style="border: 3rpx solid #51da51;color:#41ca41;font-size:30rpx;font-weight:bold">
     <view class="uploader-text" wx:if="true" bindtap="doUpload">
       <text>您有新的可补充资料：音乐曲库</text>
     </view>
@@ -29,5 +37,4 @@
       <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
     </view>
   </view>
-  </div>
 </view>

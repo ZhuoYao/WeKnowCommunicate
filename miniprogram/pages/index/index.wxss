@@ -8,8 +8,9 @@ page {
 }
 
 .userinfo, .uploader, .tunnel {
-  margin-top: 40rpx;
-  height: 140rpx;
+  margin-top: 16rpx;
+  margin-bottom: 10rpx;
+  height: 120rpx;
   width: 100%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -24,16 +25,18 @@ page {
 
 
 .userinfo-avatar {
-  width: 100rpx;
-  height: 100rpx;
+  width: 64rpx;
+  height: 64rpx;
   margin: 20rpx;
   border-radius: 50%;
-  background-size: cover;
-  background-color: white;
+  /* border: 2px solid #000; */
 }
 
+
+
 .userinfo-avatar[size] {
-  width: 100rpx;
+  width: 96rpx;
+  height: 96rpx
 }
 
 
@@ -46,9 +49,10 @@ page {
   color: #616161;
   background-color: rgba(255, 255, 255, 0);
   /*background-size: cover; */
-  text-align: left;
+  text-align: center;
   padding-left: 0;
   margin: 10rpx;
+  line-height:64rpx;
 }
 
 .userinfo-nickname::after {
@@ -144,33 +148,7 @@ page {
   word-break: break-all;
 }
 
-/* .upcard {
-  border-radius: 60rpx;
-  margin: 16rpx;
-  font-size: 34rpx;
-  padding: 16rpx;
-  border: 2rpx solid #dfe7e7;
-  background-color: rgb(76, 205, 147);
-  color: #fff;
-  box-shadow: 0rpx 2rpx 0rpx 0rpx #cccccc;
-  position: relative;
-  text-align:center;
-  width: 90%;
-} */
 
-.card {
-  border-radius: 24rpx;
-  margin: 16rpx;
-  padding: 24rpx;
-  font-size: 24rpx;
-  color: rgb(83, 112, 136);
-  padding-left: 36rpx;
-  border: 2rpx solid #dfe7e7;
-  background-color: #ffffff;
-  box-shadow: 0rpx 2rpx 0rpx 0rpx #cccccc;
-  position: relative;
-  width: 90%;
-}
 
 .usermotto {
   margin: 10rpx;

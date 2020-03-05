@@ -6,6 +6,23 @@
   box-sizing: border-box;
 } 
 
+.card {
+  border-radius: 24rpx;
+  margin: 10rpx;
+  padding: 24rpx;
+  font-size: 24rpx;
+  color: rgb(83, 112, 136);
+  padding-left: 36rpx;
+  border: 2rpx solid #dfe7e7;
+  background-color: #ffffff;
+  box-shadow: 0rpx 2rpx 0rpx 0rpx #cccccc;
+  position: relative;
+  width: 90%;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
 button {
   background: initial;
 }
@@ -38,21 +55,6 @@ page {
   flex-direction: row;
   align-items: center;
   transition: all 300ms ease;
-}
-
-.newuserinfo{
-  margin-top: 40rpx;
-  height: 140rpx;
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: none;
-  border-right: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: all 300ms ease;
-  padding-left: 120rpx;
 }
 
 .userinfo-avatar {

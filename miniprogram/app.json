@@ -36,6 +36,11 @@
     "navigationBarTitleText": "测试中，请勿使用",
     "navigationBarTextStyle": "black"
   },
+  "usingComponents": {
+    "van-button": "../miniprogram_npm/vant-weapp/button/index",
+    "van-row": "../miniprogram_npm/vant-weapp/row/index",
+    "van-col": "../miniprogram_npm/vant-weapp/col/index"
+  },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

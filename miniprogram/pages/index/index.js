@@ -41,6 +41,7 @@ Page({
     })
     this.setData({
       nums: [15, 23, 77, 65],
+      FirstTest:true
     })
     //获取openID
     this.onGetOpenid()
